@@ -13,6 +13,8 @@ def create_app():
     app.register_blueprint(views.mainbp)
     from . import destinations
     app.register_blueprint(destinations.destbp)
+    from . import auth
+    app.register_blueprint(auth.authbp)
 
 
     return app
