@@ -1,15 +1,18 @@
 from flask import Blueprint, render_template
 from .models import Destination, Comment
 
-destbp = Blueprint('destination', __name__, url_prefix='/destinations')
+#Use of blue print to group routes, 
+# name - first argument is the blue print name 
+# import name - second argument - helps identify the root url for it 
+destbp = Blueprint('destination', __name__, url_prefix = '/destinations')
 
 @destbp.route('/<id>')
 def show(id):
     destination = get_destination()
-    return render_template('destinations/show.html', destination=destination)
+    return render_template('destinations/show.html', destination = destination)
 
 def get_destination():
-    # creating the description of Brazil
+  # creating the description of Brazil
   b_desc = """Brazil is considered an advanced emerging economy.
    It has the ninth largest GDP in the world by nominal, and eight by PPP measures. 
    It is one of the world\'s major breadbaskets, being the largest producer of coffee for the last 150 years."""
@@ -24,4 +27,3 @@ def get_destination():
   comment = Comment("Sally", "free face masks!", '2023-08-12 11:00:00')
   destination.set_comments(comment)
   return destination
- 
