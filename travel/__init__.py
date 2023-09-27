@@ -5,5 +5,7 @@ def create_app():
     app.secret_key = 'asecret'
     from . import views
     app.register_blueprint(views.mainbp)
+    from . import destinations
+    app.register_blueprint(destinations.destbp)
 
     return app
