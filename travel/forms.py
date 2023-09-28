@@ -12,6 +12,7 @@ class DestinationForm(FlaskForm):
   description = TextAreaField('Description', validators = [InputRequired()])
   image = FileField('Destination Image', validators=[FileRequired(message='Image cannot be empty'),FileAllowed(ALLOWED_FILE, message='Only PNG or JPG files allowed')])
   currency = StringField('Currency', validators=[InputRequired()])
+  currency_rate = StringField('Currency Ratio', validators=[InputRequired()])
   submit = SubmitField("Create")
     
 class CommentForm(FlaskForm):

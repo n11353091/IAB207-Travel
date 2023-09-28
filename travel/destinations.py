@@ -25,7 +25,7 @@ def create():
     #call the function that checks and returns image
     db_file_path = check_upload_file(form)
     destination = Destination(name=form.name.data,description=form.description.data, 
-    image=db_file_path,currency=form.currency.data)
+    image=db_file_path,currency=form.currency.data,currency_rate=form.currency_rate.data)
     # add the object to the db session
     db.session.add(destination)
     # commit to the database
